@@ -1,42 +1,67 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.bi-moon-stars-fill {
+    margin-left: 6px;
+    color: #f1c40f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bi-sun {
+    margin-left: 8px;
+    color: #fff;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #111;
+    transition: 0.4s;
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+.slider.round {
+    border-radius: 34px;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+.slider.round:before {
+    border-radius: 50%;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.slider:before {
+    position: absolute;
+    content: '';
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+}
+input:checked+.slider {
+    background-color: #2196F3;
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    color: #fff;
 }
